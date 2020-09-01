@@ -1,0 +1,524 @@
+{
+    "@context": [
+        "http://www.w3.org/ns/csvw",
+        {
+            "@language": "en"
+        }
+    ],
+    "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#StructureDataset",
+    "dc:source": "sources.bib",
+    "prov:wasDerivedFrom": [
+        {
+            "dc:title": "phoible/phoible-dev",
+            "dc:description": "v2014-241-g0ec7201"
+        },
+        {
+            "dc:title": "bambooforest/phoible-scripts",
+            "dc:description": "a2a55d5"
+        },
+        {
+            "dc:title": "clld/glottolog",
+            "dc:description": "v3.3.2"
+        }
+    ],
+    "prov:wasGeneratedBy": {
+        "dc:title": "cldf-datasets/phoible",
+        "dc:description": "v2.0-13-gc964fd5"
+    },
+    "dialect": {
+        "commentPrefix": null
+    },
+    "tables": [
+        {
+            "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#ValueTable",
+            "dc:extent": 105466,
+            "tableSchema": {
+                "columns": [
+                    {
+                        "datatype": {
+                            "base": "string",
+                            "format": "[a-zA-Z0-9_\\-]+"
+                        },
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#id",
+                        "required": true,
+                        "name": "ID"
+                    },
+                    {
+                        "datatype": "string",
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#languageReference",
+                        "required": true,
+                        "name": "Language_ID"
+                    },
+                    {
+                        "datatype": "string",
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#parameterReference",
+                        "required": true,
+                        "name": "Parameter_ID"
+                    },
+                    {
+                        "datatype": "string",
+                        "null": [
+                            "?",
+                            ""
+                        ],
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#value",
+                        "required": false,
+                        "name": "Value"
+                    },
+                    {
+                        "datatype": "string",
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#codeReference",
+                        "required": false,
+                        "name": "Code_ID"
+                    },
+                    {
+                        "datatype": "string",
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#comment",
+                        "required": false,
+                        "name": "Comment"
+                    },
+                    {
+                        "datatype": "string",
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#source",
+                        "required": false,
+                        "separator": ";",
+                        "name": "Source"
+                    },
+                    {
+                        "datatype": "boolean",
+                        "name": "Marginal"
+                    },
+                    {
+                        "separator": " ",
+                        "name": "Allophones"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "Contribution_ID"
+                    }
+                ],
+                "foreignKeys": [
+                    {
+                        "columnReference": [
+                            "Parameter_ID"
+                        ],
+                        "reference": {
+                            "resource": "parameters.csv",
+                            "columnReference": [
+                                "ID"
+                            ]
+                        }
+                    },
+                    {
+                        "columnReference": [
+                            "Language_ID"
+                        ],
+                        "reference": {
+                            "resource": "languages.csv",
+                            "columnReference": [
+                                "ID"
+                            ]
+                        }
+                    }
+                ],
+                "primaryKey": [
+                    "ID"
+                ]
+            },
+            "url": "values.csv"
+        },
+        {
+            "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#ParameterTable",
+            "dc:extent": 3183,
+            "tableSchema": {
+                "columns": [
+                    {
+                        "datatype": {
+                            "base": "string",
+                            "format": "[a-zA-Z0-9_\\-]+"
+                        },
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#id",
+                        "required": true,
+                        "name": "ID"
+                    },
+                    {
+                        "datatype": "string",
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#name",
+                        "required": false,
+                        "name": "Name"
+                    },
+                    {
+                        "datatype": "string",
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#description",
+                        "required": false,
+                        "name": "Description"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "SegmentClass"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "tone"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "stress"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "syllabic"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "short"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "long"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "consonantal"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "sonorant"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "continuant"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "delayedRelease"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "approximant"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "tap"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "trill"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "nasal"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "lateral"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "labial"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "round"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "labiodental"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "coronal"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "anterior"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "distributed"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "strident"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "dorsal"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "high"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "low"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "front"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "back"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "tense"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "retractedTongueRoot"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "advancedTongueRoot"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "periodicGlottalSource"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "epilaryngealSource"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "spreadGlottis"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "constrictedGlottis"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "fortis"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "raisedLarynxEjective"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "loweredLarynxImplosive"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "click"
+                    }
+                ],
+                "primaryKey": [
+                    "ID"
+                ]
+            },
+            "url": "parameters.csv"
+        },
+        {
+            "dc:conformsTo": "http://cldf.clld.org/v1.0/terms.rdf#LanguageTable",
+            "dc:extent": 2186,
+            "tableSchema": {
+                "columns": [
+                    {
+                        "datatype": {
+                            "base": "string",
+                            "format": "[a-zA-Z0-9_\\-]+"
+                        },
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#id",
+                        "required": true,
+                        "name": "ID"
+                    },
+                    {
+                        "datatype": "string",
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#name",
+                        "required": false,
+                        "name": "Name"
+                    },
+                    {
+                        "datatype": "string",
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#macroarea",
+                        "required": false,
+                        "name": "Macroarea"
+                    },
+                    {
+                        "datatype": {
+                            "base": "decimal",
+                            "minimum": -90,
+                            "maximum": 90
+                        },
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#latitude",
+                        "required": false,
+                        "name": "Latitude"
+                    },
+                    {
+                        "datatype": {
+                            "base": "decimal",
+                            "minimum": -180,
+                            "maximum": 180
+                        },
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#longitude",
+                        "required": false,
+                        "name": "Longitude"
+                    },
+                    {
+                        "datatype": {
+                            "base": "string",
+                            "format": "[a-z0-9]{4}[1-9][0-9]{3}"
+                        },
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#glottocode",
+                        "required": false,
+                        "valueUrl": "http://glottolog.org/resource/languoid/id/{glottocode}",
+                        "name": "Glottocode"
+                    },
+                    {
+                        "datatype": {
+                            "base": "string",
+                            "format": "[a-z]{3}"
+                        },
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#iso639P3code",
+                        "required": false,
+                        "name": "ISO639P3code"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "Family_Glottocode"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "Family_Name"
+                    }
+                ],
+                "primaryKey": [
+                    "ID"
+                ]
+            },
+            "url": "languages.csv"
+        },
+        {
+            "dc:conformsTo": null,
+            "dc:extent": 3020,
+            "tableSchema": {
+                "columns": [
+                    {
+                        "datatype": "string",
+                        "name": "ID"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "Name"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "Contributor_ID"
+                    },
+                    {
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#source",
+                        "separator": ";",
+                        "name": "Source"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "URL"
+                    },
+                    {
+                        "datatype": {
+                            "base": "integer",
+                            "minimum": 0
+                        },
+                        "required": true,
+                        "name": "count_phonemes"
+                    },
+                    {
+                        "datatype": {
+                            "base": "integer",
+                            "minimum": 0
+                        },
+                        "required": true,
+                        "name": "count_consonants"
+                    },
+                    {
+                        "datatype": {
+                            "base": "integer",
+                            "minimum": 0
+                        },
+                        "required": true,
+                        "name": "count_vowels"
+                    },
+                    {
+                        "datatype": {
+                            "base": "integer",
+                            "minimum": 0
+                        },
+                        "null": [
+                            "NA"
+                        ],
+                        "name": "count_tones"
+                    }
+                ],
+                "foreignKeys": [
+                    {
+                        "columnReference": [
+                            "Contributor_ID"
+                        ],
+                        "reference": {
+                            "resource": "contributors.csv",
+                            "columnReference": [
+                                "ID"
+                            ]
+                        }
+                    }
+                ],
+                "primaryKey": [
+                    "ID"
+                ]
+            },
+            "url": "contributions.csv"
+        },
+        {
+            "dc:conformsTo": null,
+            "dc:extent": 10,
+            "tableSchema": {
+                "columns": [
+                    {
+                        "datatype": "string",
+                        "name": "ID"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "Name"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "Description"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "Readme"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "Contents"
+                    },
+                    {
+                        "propertyUrl": "http://cldf.clld.org/v1.0/terms.rdf#source",
+                        "separator": ";",
+                        "name": "Source"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "URL"
+                    },
+                    {
+                        "datatype": {
+                            "base": "boolean",
+                            "format": "1|0"
+                        },
+                        "name": "with_tones"
+                    }
+                ],
+                "primaryKey": [
+                    "ID"
+                ]
+            },
+            "url": "contributors.csv"
+        }
+    ]
+}
